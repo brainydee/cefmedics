@@ -77,7 +77,7 @@
 								<div class="header-row">
 									<div class="header-logo">
 										<a href="{{url('/')}}">
-											<img alt="Porto" width="143" height="40" src="{{asset('assets/img/logo/logo.png')}}">
+											<img alt="Cefmedics logo" width="143" height="40" src="{{asset('assets/img/logo/logo.png')}}">
 										</a>
 									</div>
 								</div>
