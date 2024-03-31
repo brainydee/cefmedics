@@ -76,9 +76,15 @@
 							<div class="header-column">
 								<div class="header-row">
 									<div class="header-logo">
-										<a href="{{url('/')}}">
-											<img alt="Cefmedics logo" width="143" height="40" src="{{asset('public/assets/img/logo-copy.png')}}">
-										</a>
+										@if( env('APP_ENV') == 'local')
+											<a href="{{url('/')}}">
+												<img alt="Cefmedics logo" width="143" height="40" src="{{asset('assets/img/logo-copy.png')}}">
+											</a>
+										@else
+											<a href="{{url('/')}}">
+												<img alt="Cefmedics logo" width="143" height="40" src="{{asset('public/assets/img/logo-copy.png')}}">
+											</a>
+										@endif
 									</div>
 								</div>
 							</div>
