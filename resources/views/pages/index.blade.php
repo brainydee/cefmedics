@@ -139,7 +139,7 @@
 							</div>	
 						</div>
 						<div class="text-center">
-							<a class="btn btn-outline btn-quaternary custom-button text-uppercase mt-4 font-weight-bold" href="demo-medical-departments.html">read more</a>
+							<a class="btn btn-outline btn-quaternary custom-button text-uppercase mt-4 font-weight-bold" href="{{route('oncology')}}">read more</a>
 						</div>
 					</div>
 					<div class="col-lg-6">
@@ -153,7 +153,7 @@
 							</div>
 						</div>
 						<div class="text-center">
-							<a class="btn btn-outline btn-quaternary custom-button text-uppercase mt-4 font-weight-bold" href="demo-medical-departments.html">read more</a>
+							<a class="btn btn-outline btn-quaternary custom-button text-uppercase mt-4 font-weight-bold" href="{{route('psycooncology')}}">read more</a>
 						</div>
 					</div>
 				</div>
