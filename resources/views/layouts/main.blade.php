@@ -62,7 +62,7 @@
 													<a href="tel:123-456-7890"><i class="fab fa-whatsapp text-4 text-color-primary" style="top: 0;"></i> +2348035858071</a>
 												</li>
 												<li class="nav-item nav-item-borders py-2 pe-1 d-none d-md-inline-flex">
-													<a href="mailto:mail@domain.com"><i class="far fa-envelope text-4 text-color-primary" style="top: 1px;"></i> mail@domain.com</a>
+													<a href="mailto:mail@domain.com"><i class="far fa-envelope text-4 text-color-primary" style="top: 1px;"></i>info@cefmedics.com</a>
 												</li>
 											</ul>
 										</nav>
@@ -77,7 +77,7 @@
 								<div class="header-row">
 									<div class="header-logo">
 										<a href="{{url('/')}}">
-											<img alt="Porto" width="143" height="40" src="{{asset('assets/img/demos/medical/logo-medical.png')}}">
+											<img alt="Porto" width="143" height="40" src="{{asset('assets/img/logo/logo.png')}}">
 										</a>
 									</div>
 								</div>
@@ -94,21 +94,22 @@
 														</a>
 													</li>
 													<li class="dropdown-full-color dropdown-secondary">
-														<a class="nav-link" href="demo-medical-about-us.html">
+														<a class="nav-link" href="#about">
 															About Us
 														</a>
 													</li>
+													<li class="dropdown-full-color dropdown-secondary">
+														<a class="nav-link" href="{{route('appointment')}}">
+															Appointments
+														</a>
+													</li>
 													<li class="dropdown dropdown-full-color dropdown-secondary">
-														<a class="nav-link dropdown-toggle" class="dropdown-toggle" href="demo-medical-departments.html">
+														<a class="nav-link dropdown-toggle" class="dropdown-toggle" href="#special-section">
 															Specialities
 														</a>
 														<ul class="dropdown-menu">
-															<li><a class="dropdown-item" href="demo-medical-departments-detail.html">Cardiology</a></li>
-															<li><a class="dropdown-item" href="demo-medical-departments-detail.html">Gastroenterology</a></li>
-															<li><a class="dropdown-item" href="demo-medical-departments-detail.html">Pulmonology</a></li>
-															<li><a class="dropdown-item" href="demo-medical-departments-detail.html">Dental</a></li>
-															<li><a class="dropdown-item" href="demo-medical-departments-detail.html">Gynecology</a></li>
-															<li><a class="dropdown-item" href="demo-medical-departments-detail.html">Hepatology</a></li>
+															<li><a class="dropdown-item" href="{{route('oncology')}}">Oncology</a></li>
+															<li><a class="dropdown-item" href="{{route('psycooncology')}}">Psycho-Oncology</a></li>
 														</ul>
 													</li>
 													<li class="dropdown-full-color dropdown-secondary">
@@ -116,12 +117,31 @@
 															Contact
 														</a>
 													</li>
-                                                    <li class="">
+												@guest
+													<li class="">
                                                         <a href="{{route('login')}}" class="btn btn-secondary text-white btn-rounded btn-with-arrow-solid mb-2" href="{{route('login')}}">Log In<span><i class="fas fa-sign-in"></i></span></a>
 													</li>
                                                     <li class="">
                                                         <a href="{{route('register')}}" class="btn btn-secondary text-white btn-rounded btn-with-arrow-solid mb-2" href="{{route('register')}}">Sign Up<span><i class="fas fa-user"></i></span></a>
 													</li>
+												@else
+												<div class="btn-group">
+													<button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+														<i class="fa fa-user" aria-hidden="true"></i>&nbsp;
+														{{ auth()->user()->firstname }}
+													</button>
+													<ul class="dropdown-menu dropdown-menu-end border-0 rounded shadow">
+														<form method="POST" action="{{ route('logout') }}">
+															@csrf
+															<button type="submit" class="dropdown-item"><i class="fa fa-power-off" aria-hidden="true"></i>&nbsp;Log Out</button>
+														</form>
+														@auth
+															<hr class="dropdown-divider">
+															<li><a class="dropdown-item" href="#"><i class="fa fa-home"></i>&nbsp;Go to Dashboard</a></li>
+														@endauth
+													</ul>
+												</div>
+												@endguest
 												</ul>
 											</nav>
 										</div>
@@ -153,17 +173,10 @@
 						</div>
 						<div class="col-md-4 col-lg-3">
 							<h4 class="mb-4">Opening Hours</h4>
-							<div class="info custom-info">
-								<span>Mon-Fri</span>
-								<span>8:30 am to 5:00 pm</span>
-							</div>
+						
 							<div class="info custom-info">
 								<span>Saturday</span>
-								<span>9:30 am to 1:00 pm</span>
-							</div>
-							<div class="info custom-info">
-								<span>Sunday</span>
-								<span>Closed</span>
+								<span>2:00pm to 5:00 pm</span>
 							</div>
 						</div>
 						<div class="col-md-4 col-lg-3">

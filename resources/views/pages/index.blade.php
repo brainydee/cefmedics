@@ -17,6 +17,9 @@
 									<div class="d-inline-block">
 										<p class="text-color-light custom-border-bottom-1 font-weight-light text-4-5 mb-0 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="1000" data-plugin-options="{'minWindowWidth': 0}">We are located in Lagos, Nigeria</p>
 									</div>
+									<div class="mt-4">
+										<a class="btn btn-modern btn-primary btn-effect-1" type="button"><i class="fa fa-check"></i>&nbsp; Get Started Now</a>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -32,6 +35,9 @@
 									<div class="d-inline-block">
 										<p class="text-color-light custom-border-bottom-1 font-weight-light text-4-5 mb-0 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="1000" data-plugin-options="{'minWindowWidth': 0}">Online or Over the Phone</p>
 									</div>
+									<div class="mt-4">
+										<a class="btn btn-modern btn-primary btn-effect-1" type="button"><i class="fa fa-check"></i>&nbsp; Get Started Now</a>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -44,7 +50,7 @@
 				<button role="button" class="owl-dot"><span></span></button>
 			</div>
 		</div>
-		<section class="section-custom-medical">
+		<section class="section-custom-medical" id="about">
 			<div class="container">
 				<div class="row medical-schedules">
 					<div class="col-xl-3 box-one bg-color-primary appear-animation" data-appear-animation="fadeInLeft" data-appear-animation-delay="0">
@@ -59,8 +65,8 @@
 					</div>
 					<div class="col-xl-3 box-two bg-color-tertiary appear-animation" data-appear-animation="fadeInLeft" data-appear-animation-delay="600">
 						<h5 class="m-0">
-							<a href="demo-medical-doctors.html" title="">
-								Doctors Timetable
+							<a href="#special-section" title="">
+								SPECIALITIES
 								<i class="icon-arrow-right-circle icons"></i>
 							</a>
 						</h5>
@@ -113,87 +119,42 @@
 				</div>
 			</div>
 		</section>
-		<section class="section section-no-border mb-0">
+		<section class="section section-no-border mb-0" id="special-section">
 			<div class="container">
 				<div class="row pt-3">
 					<div class="col">
 						<h2 class="font-weight-semibold mb-0">Specialities</h2>
-						<p class="lead font-weight-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+						<p class="lead font-weight-normal">CEF Medics doctors are experienced in several medical specialties and are committed to addressing your individual conditions and concerns conveniently from the comfort of your home.</p>
 					</div>
 				</div>
 				<div class="row mt-4">
-					<div class="col-lg-4">
+					<div class="col-lg-6">
 						<div class="feature-box feature-box-style-2 appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="300">
 							<div class="feature-box-icon" style="min-width: 4.7rem;">
 								<img src="img/demos/medical/icons/department-icon-cardiology.png" alt class="img-fluid" />
 							</div>
 							<div class="feature-box-info">
-								<h4 class="font-weight-semibold"><a href="demo-medical-departments-detail.html" class="text-decoration-none">Cardiology</a></h4>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur hendrerit, leo vitae interdum...</p>
+								<h4 class="font-weight-semibold"><a href="demo-medical-departments-detail.html" class="text-decoration-none">Oncology</a></h4>
+								<p>We understand the challenges that come with cancer care, which is why we offer a comprehensive online oncology service.</p>
 							</div>	
 						</div>
+						<div class="text-center">
+							<a class="btn btn-outline btn-quaternary custom-button text-uppercase mt-4 font-weight-bold" href="demo-medical-departments.html">read more</a>
+						</div>
 					</div>
-					<div class="col-lg-4">
+					<div class="col-lg-6">
 						<div class="feature-box feature-box-style-2 appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="300">
 							<div class="feature-box-icon" style="min-width: 4.7rem;">
 								<img src="img/demos/medical/icons/department-icon-gastroenterology.png" alt class="img-fluid" />
 							</div>
 							<div class="feature-box-info">
-								<h4 class="font-weight-semibold"><a href="demo-medical-departments-detail.html" class="text-decoration-none">Gastroenterology</a></h4>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur hendrerit, leo vitae interdum...</p>
+								<h4 class="font-weight-semibold"><a href="demo-medical-departments-detail.html" class="text-decoration-none">Psycho-Oncology</a></h4>
+								<p>We recognize the profound emotional and pyschological impact that a cancer diagnosis can have on individuals and their loved ones.</p>
 							</div>
 						</div>
-					</div>
-					<div class="col-lg-4">
-						<div class="feature-box feature-box-style-2 appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="300">
-							<div class="feature-box-icon" style="min-width: 4.7rem;">
-								<img src="img/demos/medical/icons/department-icon-pulmonology.png" alt class="img-fluid" />
-							</div>
-							<div class="feature-box-info">
-								<h4 class="font-weight-semibold"><a href="demo-medical-departments-detail.html" class="text-decoration-none">Pulmonology</a></h4>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur hendrerit, leo vitae interdum...</p>
-							</div>
+						<div class="text-center">
+							<a class="btn btn-outline btn-quaternary custom-button text-uppercase mt-4 font-weight-bold" href="demo-medical-departments.html">read more</a>
 						</div>
-					</div>
-				</div>
-				<div class="row mt-lg-4">
-					<div class="col-lg-4">
-						<div class="feature-box feature-box-style-2 appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="300">
-							<div class="feature-box-icon" style="min-width: 4.7rem;">
-								<img src="img/demos/medical/icons/department-icon-dental.png" alt class="img-fluid" />
-							</div>
-							<div class="feature-box-info">
-								<h4 class="font-weight-semibold"><a href="demo-medical-departments-detail.html" class="text-decoration-none">Dental</a></h4>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur hendrerit, leo vitae interdum...</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4">
-						<div class="feature-box feature-box-style-2 appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="300">
-							<div class="feature-box-icon" style="min-width: 4.7rem;">
-								<img src="img/demos/medical/icons/department-icon-gynecology.png" alt class="img-fluid" />
-							</div>
-							<div class="feature-box-info">
-								<h4 class="font-weight-semibold"><a href="demo-medical-departments-detail.html" class="text-decoration-none">Gynecology</a></h4>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur hendrerit, leo vitae interdum...</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4">
-						<div class="feature-box feature-box-style-2 appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="300">
-							<div class="feature-box-icon" style="min-width: 4.7rem;">
-								<img src="img/demos/medical/icons/department-icon-hepatology.png" alt class="img-fluid" />
-							</div>
-							<div class="feature-box-info">
-								<h4 class="font-weight-semibold"><a href="demo-medical-departments-detail.html" class="text-decoration-none">Hepatology</a></h4>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur hendrerit, leo vitae interdum...</p>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="row mt-2 pb-0">
-					<div class="col-lg-12 text-center">
-						<a class="btn btn-outline btn-quaternary custom-button text-uppercase mt-4 font-weight-bold" href="demo-medical-departments.html">view more</a>
 					</div>
 				</div>
 			</div>

@@ -15,4 +15,15 @@ class PagesController extends Controller
     {
         return view('auth.test');
     }
+
+    
+    public function oncology()
+    {
+        return view('pages.oncology');    
+    }
+
+    public function psycooncology()
+    {
+        return view('pages.psyco-oncology');    
+    }
 }

@@ -1,7 +1,10 @@
 <?php
 
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\AppointmentController;
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Middleware\Authenticate;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +19,18 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PagesController::class, 'index'])->name('home');
 
+Route::withoutMiddleware([Authenticate::class])->group(function () {
+    Route::get('specialities/oncology', [App\Http\Controllers\PagesController::class, 'oncology'])->name('oncology');
+    Route::get('specialities/psyco-oncology', [App\Http\Controllers\PagesController::class, 'psycooncology'])->name('psycooncology');
+    Route::get('appointment', [App\Http\Controllers\AppointmentController::class, 'index'])->name('appointment');
+    Route::get('userdashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('userdashboard');
+});
+
+
+
 Route::get('/test', [App\Http\Controllers\HomeController::class, 'test'])->name('test');
+
+
 
 Auth::routes();
 
