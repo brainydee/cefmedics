@@ -77,7 +77,11 @@
 								<div class="header-row">
 									<div class="header-logo">
 										<a href="{{url('/')}}">
+											@if(env('APP_ENV') === 'production')
+											<img alt="Cefmedics logo" width="143" height="40" src="{{asset('public/assets/img/logo-copy.png')}}">
+											@else
 											<img alt="Cefmedics logo" width="143" height="40" src="{{asset('assets/img/logo-copy.png')}}">
+											@endif
 										</a>
 									</div>
 								</div>
