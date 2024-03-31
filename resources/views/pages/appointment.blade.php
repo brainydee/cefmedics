@@ -34,23 +34,22 @@
 
                         <div class="row">
                             <div class="form-group col-lg-6">
-                                <label class="form-label mb-1 text-2">Full Name</label>
-                                <input type="text" value="" data-msg-required="Please enter your name." maxlength="100" class="form-control text-3 h-auto py-2" name="name" required>
+                                <label class="form-label mb-1 text-2">First Name</label>
+                                <input type="text" value="" data-msg-required="Please enter your first name." maxlength="100" class="form-control text-3 h-auto py-2" name="firstname" required>
                             </div>
                             <div class="form-group col-lg-6">
                                 <label class="form-label mb-1 text-2">Last Name</label>
-                                <input type="email" value="" data-msg-required="" data-msg-email="Please enter a valid email address." maxlength="100" class="form-control text-3 h-auto py-2" name="email" required>
+                                <input type="text" value="" data-msg-required="" data-msg-email="Please enter your last name." maxlength="100" class="form-control text-3 h-auto py-2" name="lastname" required>
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group col">
-                                <label class="form-label">City</label>
+                                <label class="form-label">Speciality</label>
                                 <div class="custom-select-1">
-                                    <select class="form-select form-control h-auto py-2" data-msg-required="Please select a city." name="city" required>
-                                        <option value="">Choose...</option>
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
+                                    <select name = "speciality"class="form-select form-control h-auto py-2" data-msg-required="Please select a speciality." required>
+                                        <option value="">- SELECT -</option>
+                                        <option value="oncology">Oncology</option>
+                                        <option value="psyco-oncology">Psyco-oncology</option>
                                     </select>
                                 </div>
                             </div>
@@ -63,33 +62,14 @@
                         </div>
                         <div class="row">
                             <div class="form-group col">
-                                <label class="form-label mb-1 text-2">Subject</label>
-                                <input type="text" value="" data-msg-required="Please enter the subject." maxlength="100" class="form-control text-3 h-auto py-2" name="subject" required>
+                                <label class="form-label mb-1 text-2">Address</label>
+                                <input type="text" value="" data-msg-required="Please enter the subject." maxlength="100" class="form-control text-3 h-auto py-2" name="address" required>
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group col">
-                                <div class="form-check form-check-inline">
-                                    <label class="form-check-label">
-                                        <input class="form-check-input" type="radio" name="radios" data-msg-required="Please select at least one option." id="tabContent9Radio1" value="option1" required> Option 1
-                                    </label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <label class="form-check-label">
-                                        <input class="form-check-input" type="radio" name="radios" data-msg-required="Please select at least one option." id="tabContent9Radio2" value="option2" required> Option 2
-                                    </label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <label class="form-check-label">
-                                        <input class="form-check-input" type="radio" name="radios" data-msg-required="Please select at least one option." id="tabContent9Radio3" value="option3" required> Option 3
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col">
-                                <label class="form-label mb-1 text-2">Message</label>
-                                <textarea maxlength="5000" data-msg-required="Please enter your message." rows="8" class="form-control text-3 h-auto py-2" name="message" required></textarea>
+                                <label class="form-label mb-1 text-2">Reason for appointment</label>
+                                <textarea maxlength="5000" data-msg-required="Please enter your message." rows="8" class="form-control text-3 h-auto py-2" name="reason" required></textarea>
                             </div>
                         </div>
                         <div class="row">
