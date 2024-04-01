@@ -23,11 +23,12 @@ Route::get('/', [PagesController::class, 'index'])->name('home');
 Route::withoutMiddleware([Authenticate::class])->group(function () {
     Route::get('specialities/oncology', [App\Http\Controllers\PagesController::class, 'oncology'])->name('oncology');
     Route::get('specialities/psyco-oncology', [App\Http\Controllers\PagesController::class, 'psycooncology'])->name('psycooncology');
-    Route::get('userdashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('userdashboard');
 });
 
 Route::middleware('auth')->group(function(){
     Route::get('appointment', App\Livewire\AppointmentPage::class)->name('appointment');
+    Route::get('userdashboard', App\Livewire\Dashboardhome::class)->name('userdashboard');
+    Route::get('pay', App\Livewire\Paymmentpage::class)->name('pay');
 });
 
 Route::get('/test', [App\Http\Controllers\HomeController::class, 'test'])->name('test');
