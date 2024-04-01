@@ -95,7 +95,7 @@
                                 <span class="icon icon-sm rounded-circle bg-primary-light"><i class="text-primary material-icons md-monetization_on"></i></span>
                                 <div class="text">
                                     <h6 class="mb-1 card-title">Earnings</h6>
-                                    <span>$13,456.5</span>
+                                    <span>&#8358; 0</span>
                                 </div>
                             </article>
                         </div>
@@ -106,7 +106,7 @@
                                 <span class="icon icon-sm rounded-circle bg-warning-light"><i class="text-warning material-icons md-qr_code"></i></span>
                                 <div class="text">
                                     <h6 class="mb-1 card-title">Appointments</h6>
-                                    <span>9.856</span>
+                                    <span>{{auth()->user()->appointments->count()}}</span>
                                 </div>
                             </article>
                         </div>

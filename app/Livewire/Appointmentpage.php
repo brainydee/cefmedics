@@ -41,6 +41,7 @@ class Appointmentpage extends Component
             $validated = $this->validate();
             $validated['user_id'] = auth()->user()->id;
             $date = Carbon::createFromFormat('Y-m-d', $this->appointment_date);
+            
             if (!$date->isSaturday()) {
                 toastr()
                 ->progressBar(false)
