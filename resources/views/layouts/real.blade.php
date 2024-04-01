@@ -162,7 +162,7 @@
 				</div>
 			</header>
 
-			@yield('content')
+            {{$slot}}
 
 			<footer id="footer" class="m-0">
 				<div class="container">
@@ -244,34 +244,5 @@
 
 		<!-- Theme Initialization Files -->
 		<script src="{{asset('assets/js/theme.init.js')}}"></script>
-		<script>
-				document.addEventListener('DOMContentLoaded', function() {
-				const dateInput = document.getElementById('saturdayDate');
-
-				function isSaturday(date) {
-					return date.getDay() === 6;
-				}
-
-				function updateToNextSaturday() {
-					const today = new Date();
-					const currentDay = today.getDay();
-					const daysToAdd = currentDay <= 6 ? 6 - currentDay : 6;
-					const nearestSaturday = new Date(today.getFullYear(), today.getMonth(), today.getDate() + daysToAdd + 1); 
-					const nearestSaturdayISO = nearestSaturday.toISOString().split('T')[0];
-					dateInput.value = nearestSaturdayISO;
-				}
-
-
-				updateToNextSaturday();
-
-			
-				dateInput.addEventListener('input', function() {
-					const selectedDate = new Date(dateInput.value);
-					if (!isSaturday(selectedDate)) {
-						updateToNextSaturday();
-					}
-				});
-			});
-			</script>
 	</body>
 </html>

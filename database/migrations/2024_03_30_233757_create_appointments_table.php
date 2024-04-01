@@ -14,12 +14,15 @@ return new class extends Migration
         Schema::create('appointments', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
-            $table->string('speciality')->nullable();
+            $table->string('appointment_type')->nullable();
+            $table->string('firstname');
+            $table->string('lastname');
+            $table->date('appointment_date');
             $table->mediumText('reason')->nullable();
             $table->tinyText('address')->nullable();
-            $table->string('file_path')->nullable();
-            $table->date('appointment_date');
-            $table->time('appointment_time');
+            $table->string('appointment_time');
+            $table->boolean('active')->default(false);
+            $table->boolean('is_paid')->default(false);
             $table->timestamps();
         });
     }

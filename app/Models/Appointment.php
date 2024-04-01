@@ -10,7 +10,11 @@ class Appointment extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['user_id', 'speciality', 'reason', 'address', 'file_path'];
+    protected $fillable = ['user_id', 'firstname', 'lastname', 'appointment_type', 'appointment_date', 'appointment_time', 'address', 'reason', 'active'];
+
+    protected $casts = [
+        'active' => 'boolean'
+    ];
 
     public function user():BelongsTo
     {
