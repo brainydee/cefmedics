@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Appointment;
 use App\Models\Payment;
 use Paystack;
 use Illuminate\Http\Request;
@@ -10,8 +11,6 @@ class PaymentController extends Controller
 {
     public function handlePaymentData()
     {
-     
-
         try {
             $paymentDetails       = Paystack::getPaymentData();
             $paymentstatus        = $paymentDetails['status'];
@@ -68,7 +67,7 @@ class PaymentController extends Controller
                     'channel' => $channel,
                     'currency' => $currency,
                     'receipt_number' => $receipt_number,
-                    'amount' => $amount,
+                    'amount' => $amount/100,
                     'gateway_response' => $gateway_response,
                     'ip_address' => $ip_address,
                     'fees' => $fees,
@@ -97,11 +96,22 @@ class PaymentController extends Controller
                     'appointment_id' => intval($appointment_id),
                 ]);
 
+                $appointment = Appointment::find($appointment_id);
+                $appointment->active = 1;
+                $appointment->save();
                 $payment->save();
+                toastr()
+                ->persistent()
+                ->closeButton()
+                ->addSuccess('Your appointment has been approved successfully.');
+                return redirect(route('userdashboard'));
             }
          
         } catch (\Throwable $th) {
-            dd($th->getMessage());
+            toastr()
+            ->progressBar(false)
+            ->addError('Something went wrong please try again later.');
+            return redirect()->back();
         }
      
     }

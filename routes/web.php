@@ -26,9 +26,15 @@ Route::withoutMiddleware([Authenticate::class])->group(function () {
 });
 
 Route::middleware('auth')->group(function(){
+    Route::prefix('dashboard')->group(function(){
+        Route::get('appointments', App\Livewire\Appointments::class)->name('appointments');
+        Route::get('pay', App\Livewire\Paymmentpage::class)->name('pay');
+        Route::get('payments', App\Livewire\Paymentslistings::class)->name('payments');
+    });
+   
     Route::get('appointment', App\Livewire\AppointmentPage::class)->name('appointment');
     Route::get('userdashboard', App\Livewire\Dashboardhome::class)->name('userdashboard');
-    Route::get('pay', App\Livewire\Paymmentpage::class)->name('pay');
+    
     Route::get('pay/callback', [App\Http\Controllers\PaymentController::class, 'handlePaymentData'])->name('pay-data');
 });
 

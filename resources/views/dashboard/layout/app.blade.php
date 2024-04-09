@@ -31,23 +31,19 @@
             <nav>
                 <ul class="menu-aside">
                     <li class="menu-item active">
-                        <a class="menu-link" href="index.html">
+                        <a class="menu-link" href="{{route('userdashboard')}}">
                             <i class="icon material-icons md-home"></i>
                             <span class="text">Dashboard</span>
                         </a>
                     </li>
-                    <li class="menu-item has-submenu">
-                        <a class="menu-link" href="page-transactions-1.html">
+                    <li class="menu-item">
+                        <a class="menu-link" href="{{route('payments')}}">
                             <i class="icon material-icons md-monetization_on"></i>
-                            <span class="text">Transactions</span>
+                            <span class="text">Payments</span>
                         </a>
-                        <div class="submenu">
-                            <a href="page-transactions-1.html">Transaction 1</a>
-                            <a href="page-transactions-2.html">Transaction 2</a>
-                        </div>
                     </li>
                     <li class="menu-item">
-                        <a class="menu-link" href="page-reviews.html">
+                        <a class="menu-link" href="{{route('appointments')}}">
                             <i class="icon material-icons md-comment"></i>
                             <span class="text">Appointments</span>
                         </a>

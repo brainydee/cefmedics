@@ -33,8 +33,8 @@
                     <article class="icontext">
                         <span class="icon icon-sm rounded-circle bg-info-light"><i class="text-info material-icons md-shopping_basket"></i></span>
                         <div class="text">
-                            <h6 class="mb-1 card-title">Earning</h6>
-                            <span>$6,982</span>
+                            <h6 class="mb-1 card-title">Tests Result Uploaded</h6>
+                            <span>2</span>
                         </div>
                     </article>
                 </div>
