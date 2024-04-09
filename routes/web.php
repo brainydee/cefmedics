@@ -29,6 +29,7 @@ Route::middleware('auth')->group(function(){
     Route::get('appointment', App\Livewire\AppointmentPage::class)->name('appointment');
     Route::get('userdashboard', App\Livewire\Dashboardhome::class)->name('userdashboard');
     Route::get('pay', App\Livewire\Paymmentpage::class)->name('pay');
+    Route::get('pay/callback', [App\Http\Controllers\PaymentController::class, 'handlePaymentData'])->name('pay-data');
 });
 
 Route::get('/test', [App\Http\Controllers\HomeController::class, 'test'])->name('test');

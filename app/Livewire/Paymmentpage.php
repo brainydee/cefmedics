@@ -19,6 +19,13 @@ class Paymmentpage extends Component
             $email     =  auth()->user()->email;
             $amount    =  intval(50000) * 100;
 
+            if($amount == 0){
+                toastr()
+                ->progressBar(false)
+                ->addError("Action Denied");
+                return redirect()->back();
+            }
+
             $data = array(
                 "amount"    =>  $amount,
                 "reference" =>  $reference,
@@ -29,12 +36,13 @@ class Paymmentpage extends Component
                     "appointment_id" => $this->appointment->id
                 ]
             );
+
             return Paystack::getAuthorizationUrl($data)->redirectNow();
+
         }catch(\Exception $e) {
-            // return Redirect::back()->withMessage(['msg'=>'The paystack token has expired. Please refresh the page and try again.', 'type'=>'error']);
             toastr()
             ->progressBar(false)
-            ->addError($e->getMessage());
+            ->addError('Something went wrong please try again later.');
             return redirect()->back();
         }  
     }

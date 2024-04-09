@@ -49,7 +49,7 @@ class Appointmentpage extends Component
                 return redirect()->back();
             }
             $time = $validated['appointment_time'];
-            $available = $this->checkAvailability($time);
+            $available = $this->checkAvailability($time, $validated['appointment_date']);
 
             if(!$available){
                 toastr()
@@ -59,9 +59,10 @@ class Appointmentpage extends Component
             }
 
             Appointment::create($validated);
-            toastr()->addSuccess('Your appointment is succcessful kindly proceed to make payment.');
-            return redirect()->route('userdashboard');
-        } catch (\Throwable $th) {        
+            toastr()->addSuccess('Your appointment was succcessful kindly proceed to make payment.');
+            return redirect()->route('pay');
+        } catch (\Throwable $th) {    
+            dd($th->getMessage());    
             toastr()
             ->escapeHtml(false)
             ->addError('<strong>We’re sorry</strong>, but an error occurred.');
@@ -70,9 +71,11 @@ class Appointmentpage extends Component
     }
 
 
-    public function checkAvailability($time)
+    public function checkAvailability($time, $date)
     {
-        $appointment = Appointment::where('appointment_time', $time)->first();
+        //check if date and time has been booked already::
+
+        $appointment = Appointment::where('appointment_time', $time)->where('appointment_date', $date)->first();
 
         if($appointment){
              return false;

@@ -23,10 +23,13 @@
             <div class="row mt-5">
                 <div class="col-lg-8">
                     <h2 class="font-weight-semibold mb-3">Our Psyco-oncology Services</h2>
+    
 
-                    <p>At CEF Medics, we undestand the challenges that come.</p>
+                    <p>At CEF Medics, we recognize the profound emotional and psychological impact that a cancer diagnosis can have on individuals and their loved ones. That's why we offer a specialized online Psycho-Oncology service to provide comprehensive support throughout your cancer journey</p>
 
-                    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur hendrerit, leo vitae interdum pretium, tortor risus dapibus tortor, eu suscipit orci leo sed nisl. Integer et ipsum eu nulla auctor mattis sit amet in diam. Vestibulum non ornare arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer vitae nunc consequat, viverra nisl eget, dictum eros. Maecenas sit amet iaculis massa. Sed dui tellus, pellentesque non enim eget, cursus sollicitudin tellus. Cras eget varius enim. Aenean ac libero finibus, varius nisi a, cursus magna. Vestibulum vitae massa purus. Etiam vulputate ullamcorper diam, a iaculis nulla placerat a. Aenean ac libero finibus, varius nisi a, cursus magna. Vestibulum vitae massa purus. Etiam vulputate ullamcorper diam, a iaculis nulla placerat a.</p>
+                    <p class="mt-2">
+                    Our team of experienced psycho-oncologists is dedicated to addressing the unique emotional and psychological challenges that arise before, during, and after cancer treatment. We understand that coping with cancer involves more than just medical treatment—it requires holistic support for mental and emotional well-being.
+                    </p>
                 </div>
                 <div class="col-lg-4">
 
@@ -51,37 +54,12 @@
                         </div>
                         <div class="col-lg-12 mb-4">
                             <div class="counter counter-primary">
-                                <strong data-to="12">0</strong>
-                                <label>Departments</label>
-                            </div>
-                        </div>
-                        <div class="col-lg-12 mb-4">
-                            <div class="counter counter-primary">
                                 <strong data-to="2">0</strong>
                                 <label>Specialities</label>
                             </div>
                         </div>
                     </div>
 
-                </div>
-            </div>
-
-            <div class="row mb-5">
-                <div class="col">
-                    <div class="toggle toggle-primary toggle-simple" data-plugin-toggle>
-                        <section class="toggle">
-                            <a class="toggle-title">Payment Options</a>
-                            <div class="toggle-content">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pellentesque neque eget diam posuere porta. Quisque ut nulla at nunc <a href="#">vehicula</a> lacinia. Proin adipiscing porta tellus, ut feugiat nibh adipiscing sit amet. In eu justo a felis faucibus ornare vel id metus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In eu libero ligula. Fusce eget metus lorem, ac viverra leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pellentesque neque eget diam posuere porta. Quisque ut nulla at nunc <a href="#">vehicula</a> lacinia. </p>
-                            </div>
-                        </section>
-                        <section class="toggle">
-                            <a class="toggle-title">Appointments</a>
-                            <div class="toggle-content">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget leo at velit imperdiet varius. In eu ipsum vitae velit congue iaculis vitae at risus. Nullam tortor nunc, bibendum vitae semper a, volutpat eget massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer fringilla, orci sit amet posuere auctor, orci eros pellentesque odio, nec pellentesque erat ligula nec massa. Aenean consequat lorem ut felis ullamcorper posuere gravida tellus faucibus. Maecenas dolor elit, pulvinar eu vehicula eu, consequat et lacus. Duis et purus ipsum. In auctor mattis ipsum id molestie. Donec risus nulla, fringilla a rhoncus vitae, semper a massa. Vivamus ullamcorper, enim sit amet consequat laoreet, tortor tortor dictum urna, ut egestas urna ipsum nec libero. Nulla justo leo, molestie vel tempor nec, egestas at massa. Aenean pulvinar, felis porttitor iaculis pulvinar, odio orci sodales odio, ac pulvinar felis quam sit.</p>
-                            </div>
-                        </section>
-                    </div>
                 </div>
             </div>
 
