@@ -32,7 +32,7 @@ Route::middleware('auth')->group(function(){
         Route::get('payments', App\Livewire\Paymentslistings::class)->name('payments');
     });
    
-    Route::get('appointment', App\Livewire\AppointmentPage::class)->name('appointment');
+    Route::get('appointment', App\Livewire\Appointmentpage::class)->name('appointment');
     Route::get('userdashboard', App\Livewire\Dashboardhome::class)->name('userdashboard');
     
     Route::get('pay/callback', [App\Http\Controllers\PaymentController::class, 'handlePaymentData'])->name('pay-data');
