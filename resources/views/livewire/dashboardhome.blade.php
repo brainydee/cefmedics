@@ -6,18 +6,20 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-4">
-                <div class="card card-body mb-4">
-                    <article class="icontext">
-                        <span class="icon icon-sm rounded-circle bg-primary-light"><i class="text-primary material-icons md-monetization_on"></i></span>
-                        <div class="text">
-                            <h6 class="mb-1 card-title">Earnings</h6>
-                            <span>&#8358; 0</span>
-                        </div>
-                    </article>
+             @if(auth()->user()->user_type == 'admin')
+                <div class="col-lg-6">
+                    <div class="card card-body mb-4">
+                        <article class="icontext">
+                            <span class="icon icon-sm rounded-circle bg-primary-light"><i class="text-primary material-icons md-monetization_on"></i></span>
+                            <div class="text">
+                                <h6 class="mb-1 card-title">Earnings</h6>
+                                <span>&#8358; 0</span>
+                            </div>
+                        </article>
+                    </div>
                 </div>
-            </div>
-            <div class="col-lg-4">
+            @endif
+            <div class="col-lg-6">
                 <div class="card card-body mb-4">
                     <article class="icontext">
                         <span class="icon icon-sm rounded-circle bg-warning-light"><i class="text-warning material-icons md-qr_code"></i></span>
@@ -28,17 +30,19 @@
                     </article>
                 </div>
             </div>
-            <div class="col-lg-4">
+        @if(auth()->user()->user_type != 'admin')
+            <div class="col-lg-6">
                 <div class="card card-body mb-4">
                     <article class="icontext">
                         <span class="icon icon-sm rounded-circle bg-info-light"><i class="text-info material-icons md-shopping_basket"></i></span>
                         <div class="text">
                             <h6 class="mb-1 card-title">Tests Result Uploaded</h6>
-                            <span>2</span>
+                            <span>{{$test_results}}</span>
                         </div>
                     </article>
                 </div>
             </div>
+        @endif
         </div>
     </section>
 </div>

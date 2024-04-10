@@ -32,7 +32,10 @@
 		<link rel="stylesheet" href="{{asset('assets/css/theme-elements.css')}}">
 		<link rel="stylesheet" href="{{asset('assets/css/theme-blog.css')}}">
 		<link rel="stylesheet" href="{{asset('assets/css/theme-shop.css')}}">
-
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 		<!-- Demo CSS -->
 		<link rel="stylesheet" href="{{asset('assets/css/demos/demo-medical.css')}}">
 
@@ -42,6 +45,11 @@
 		<!-- Theme Custom CSS -->
 		<link rel="stylesheet" href="{{asset('assets/css/custom.css')}}">
 		<link rel="stylesheet" href="{{asset('assets/css/extra.css')}}">
+		<style>
+			body{
+				font-family: "Poppins", sans-serif !important;
+			}
+		</style>
 
 	</head>
 	<body>
@@ -143,7 +151,7 @@
 														</form>
 														@auth
 															<hr class="dropdown-divider">
-															<li><a class="dropdown-item" href="#"><i class="fa fa-home"></i>&nbsp;Go to Dashboard</a></li>
+															<li><a class="dropdown-item" href="{{route('userdashboard')}}"><i class="fa fa-home"></i>&nbsp;Go to Dashboard</a></li>
 														@endauth
 													</ul>
 												</div>

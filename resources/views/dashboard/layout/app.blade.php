@@ -13,15 +13,20 @@
         <meta property="og:image" content="" />
         <!-- Favicon -->
         <link rel="shortcut icon" type="image/x-icon" href="assets/imgs/theme/favicon.svg" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
         <!-- Template CSS -->
         <link href="{{asset('dashboard/assets/css/main.css?v=1.0')}}" rel="stylesheet" type="text/css" />
+        <link href="{{asset('dashboard/assets/css/extra.css')}}" rel="stylesheet" type="text/css" />
     </head>
 
     <body>
         <div class="screen-overlay"></div>
         <aside class="navbar-aside" id="offcanvas_aside">
             <div class="aside-top">
-                <a href="index.html" class="brand-wrap">
+                <a href="{{url('/')}}" class="brand-wrap">
                     <img alt="Porto" width="143" height="40" src="{{asset('assets/img/logo/logo.png')}}">
                 </a>
                 <div>
@@ -36,12 +41,14 @@
                             <span class="text">Dashboard</span>
                         </a>
                     </li>
+                @if(auth()->user()->user_type == 'admin')
                     <li class="menu-item">
                         <a class="menu-link" href="{{route('payments')}}">
                             <i class="icon material-icons md-monetization_on"></i>
                             <span class="text">Payments</span>
                         </a>
                     </li>
+                @endif
                     <li class="menu-item">
                         <a class="menu-link" href="{{route('appointments')}}">
                             <i class="icon material-icons md-comment"></i>
