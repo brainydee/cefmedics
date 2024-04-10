@@ -25,16 +25,16 @@ Route::withoutMiddleware([Authenticate::class])->group(function () {
     Route::get('specialities/psyco-oncology', [App\Http\Controllers\PagesController::class, 'psycooncology'])->name('psycooncology');
 });
 
+
 Route::middleware('auth')->group(function(){
     Route::prefix('dashboard')->group(function(){
         Route::get('appointments', App\Livewire\Appointments::class)->name('appointments');
         Route::get('pay', App\Livewire\Paymmentpage::class)->name('pay');
         Route::get('payments', App\Livewire\Paymentslistings::class)->name('payments');
     });
-   
+
     Route::get('appointment', App\Livewire\Appointmentpage::class)->name('appointment');
     Route::get('userdashboard', App\Livewire\Dashboardhome::class)->name('userdashboard');
-    
     Route::get('pay/callback', [App\Http\Controllers\PaymentController::class, 'handlePaymentData'])->name('pay-data');
 });
 
