@@ -1,11 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Mail\AppointmentConfirmedMail;
 use App\Models\Appointment;
 use App\Models\Payment;
 use Paystack;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class PaymentController extends Controller
 {
@@ -100,6 +101,9 @@ class PaymentController extends Controller
                 $appointment->active = 1;
                 $appointment->save();
                 $payment->save();
+
+                Mail::to(auth()->user()->email)->send(new AppointmentConfirmedMail(auth()->user()));
+
                 toastr()
                 ->persistent()
                 ->closeButton()
@@ -108,6 +112,7 @@ class PaymentController extends Controller
             }
          
         } catch (\Throwable $th) {
+            dd($th->getMessage());
             toastr()
             ->progressBar(false)
             ->addError('Something went wrong please try again later.');

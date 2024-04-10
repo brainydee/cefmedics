@@ -75,7 +75,7 @@ class Appointmentpage extends Component
     {
         //check if date and time has been booked already::
 
-        $appointment = Appointment::where('appointment_time', $time)->where('appointment_date', $date)->first();
+        $appointment = Appointment::where('appointment_time', $time)->where('appointment_date', $date)->where('active', '1')->first();
 
         if($appointment){
              return false;
