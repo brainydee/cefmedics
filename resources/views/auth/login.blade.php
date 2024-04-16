@@ -58,11 +58,15 @@
                                 <button type="submit" class="btn btn-dark btn-modern w-100 text-uppercase rounded-0 font-weight-bold text-3 py-3" data-loading-text="Loading..."><i class="fas fa-sign-in-alt"></i>&nbsp;&nbsp;Login</button>
                             </div>
                         </div>
+                        <div class="d-flex justify-content-center">
+                            <a href="{{route('register')}}">Don't have an account ? Click to Sign Up</a>
+                        </div>
                     </form>
                 </div>
                 <div class="col-md-6 col-lg-5">
                     <img src="{{asset('assets/img/loger.jpg')}}" class="img-responsive custom"/>
                 </div>
+              
             </div>
 
         </div>
