@@ -55,12 +55,17 @@
                         </div>
                         <div class="row">
                             <div class="form-group col">
-                                <button type="submit" class="btn btn-dark btn-modern w-100 text-uppercase rounded-0 font-weight-bold text-3 py-3" data-loading-text="Loading..."><i class="fas fa-sign-in-alt"></i>&nbsp;&nbsp;Login</button>
+                                <button type="submit" class="btn btn-dark btn-modern w-100 text-uppercase rounded-0 font-weight-bold text-3 py-3" data-loading-text="Loading..."><i class="fas fa-sign-in-alt"></i>&nbsp;&nbsp;SIGN IN</button>
                             </div>
                         </div>
                         <div class="d-flex justify-content-center">
-                            <a href="{{route('register')}}">Don't have an account ? Click to Sign Up</a>
+                            <p class="text-dark">OR</p>
                         </div>
+
+                        <div class="d-flex justify-content-center">
+                            <a type="button" href="{{route('register')}}" class="btn btn-primary btn-modern w-100 text-uppercase rounded-0 font-weight-bold text-3 py-3" data-loading-text="Loading..."><i class="fas fa-check"></i>&nbsp;&nbsp;SIGN UP</a>
+                        </div>
+                        
                     </form>
                 </div>
                 <div class="col-md-6 col-lg-5">
