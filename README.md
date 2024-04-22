@@ -27,12 +27,14 @@ To set up the Cefmedics Laravel project, follow these steps:
    ```bash
    git clone https://github.com/cefmedics/cefmedics.git
 
-2. cd cefmedics
-    composer install
+2.   ```bash
+   cd cefmedics
+   composer install
 
-3. php artisan key:generate
 
-4. php artisan migrate
+4. php artisan key:generate
 
-5. php artisan serve
+5. php artisan migrate
+
+6. php artisan serve
 
