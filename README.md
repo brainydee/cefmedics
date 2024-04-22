@@ -30,10 +30,9 @@ To set up the Cefmedics Laravel project, follow these steps:
    cd cefmedics
    composer install
 
-
-4. php artisan key:generate
-
-5. php artisan migrate
-
-6. php artisan serve
+    php artisan key:generate
+   
+    php artisan migrate
+   
+    php artisan serve
 
