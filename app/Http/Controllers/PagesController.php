@@ -26,4 +26,9 @@ class PagesController extends Controller
     {
         return view('pages.psyco-oncology');    
     }
+
+    public function showabout()
+    {
+        return view('pages.about');    
+    }
 }

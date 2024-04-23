@@ -23,6 +23,7 @@ Route::get('/', [PagesController::class, 'index'])->name('home');
 Route::withoutMiddleware([Authenticate::class])->group(function () {
     Route::get('specialities/oncology', [App\Http\Controllers\PagesController::class, 'oncology'])->name('oncology');
     Route::get('specialities/psyco-oncology', [App\Http\Controllers\PagesController::class, 'psycooncology'])->name('psycooncology');
+    Route::get('about-us', [App\Http\Controllers\PagesController::class, 'showabout'])->name('about');
 });
 
 

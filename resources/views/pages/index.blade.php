@@ -18,7 +18,7 @@
 										<p class="text-color-light custom-border-bottom-1 font-weight-light text-4-5 mb-0 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="1000" data-plugin-options="{'minWindowWidth': 0}">We are located in Lagos, Nigeria</p>
 									</div>
 									<div class="mt-4">
-										<a class="btn btn-modern btn-primary btn-effect-1" type="button"><i class="fa fa-check"></i>&nbsp; Get Started Now</a>
+										<a href="{{route('appointments')}}" class="btn btn-modern btn-primary btn-effect-1" type="button"><i class="fa fa-check"></i>&nbsp; Get Started Now</a>
 									</div>
 								</div>
 							</div>
@@ -108,10 +108,10 @@
 				<div class="row mt-5 mb-5 pt-3 pb-3">
 					<div class="col-md-8">
 						<h2 class="font-weight-semibold mb-0">About Us</h2>
-						<p class="lead font-weight-normal">To offer Oncology and Psycho-oncology support to cancer patients.</p>
-						<!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur hendrerit, leo vitae interdum pretium, tortor risus dapibus tortor, eu suscipit orci leo sed nisl. Integer et ipsum eu nulla auctor mattis sit amet in diam. Vestibulum non ornare arcu. Class aptent taciti sociosqu ad...</p>
+						<p class="lead font-weight-normal text-justify">At CEF Medics, we understand that navigating the complexities of cancer care can be overwhelming. That's why we're dedicated to providing compassionate and comprehensive telemedicine services to support patients throughout their journey.</p>
+						<p class="lead font-weight-normal text-justify">Our mission at CEF Medics is to empower individuals facing cancer with the knowledge, resources, and emotional support they need to thrive. We believe in personalized care that goes beyond medical treatment, encompassing emotional well-being and holistic support.</p>
 
-						<a class="btn btn-outline btn-quaternary custom-button text-uppercase mt-4 mb-4 mb-md-0 font-weight-bold">read more</a> -->
+						<a href="{{route('about')}}" class="btn btn-outline btn-quaternary custom-button text-uppercase mt-4 mb-4 mb-md-0 font-weight-bold">read more</a>
 					</div>
 					<div class="col-md-4">
 						<img src="img/demos/medical/gallery/gallery-1.jpg" alt class="img-fluid box-shadow-custom" /> 

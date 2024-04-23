@@ -105,7 +105,7 @@
 														</a>
 													</li>
 													<li class="dropdown-full-color dropdown-secondary">
-														<a class="nav-link" href="#about">
+														<a class="nav-link" href="{{route('about')}}">
 															About Us
 														</a>
 													</li>
