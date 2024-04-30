@@ -4,6 +4,7 @@ namespace App\Livewire;
 
 use App\Models\Appointment;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 use Livewire\Component;
 
 class Appointmentpage extends Component
@@ -39,6 +40,9 @@ class Appointmentpage extends Component
     {
         $validated = $this->validate();
         try {
+
+            DB::beginTransaction();
+
             $validated['user_id'] = auth()->user()->id;
             $date = Carbon::createFromFormat('Y-m-d', $this->appointment_date);
             
@@ -59,9 +63,11 @@ class Appointmentpage extends Component
             }
             $validated['appointment_date'] = Carbon::parse($validated['appointment_date'])->format('d-m-Y');
             Appointment::create($validated);
+            DB::commit();
             toastr()->addSuccess('Your appointment was succcessful kindly proceed to make payment.');
             return redirect()->route('pay');
-        } catch (\Throwable $th) {     
+        } catch (\Throwable $th) {  
+            DB::rollBack();   
             toastr()
             ->escapeHtml(false)
             ->addError('<strong>We’re sorry</strong>, but an error occurred.');

@@ -6,6 +6,7 @@ use App\Models\Appointment;
 use App\Models\Payment;
 use Paystack;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 
 class PaymentController extends Controller
@@ -13,6 +14,9 @@ class PaymentController extends Controller
     public function handlePaymentData()
     {
         try {
+            DB::beginTransaction();
+
+
             $paymentDetails       = Paystack::getPaymentData();
             $paymentstatus        = $paymentDetails['status'];
             $status               = $paymentDetails['status'] ?? null;
@@ -103,16 +107,17 @@ class PaymentController extends Controller
                 $payment->save();
 
                 Mail::to(auth()->user()->email)->send(new AppointmentConfirmedMail(auth()->user()));
-
+                DB::commit();
                 toastr()
                 ->persistent()
                 ->closeButton()
                 ->addSuccess('Your appointment has been approved successfully.');
+
                 return redirect(route('userdashboard'));
             }
          
         } catch (\Throwable $th) {
-            dd($th->getMessage());
+            DB::rollBack();
             toastr()
             ->progressBar(false)
             ->addError('Something went wrong please try again later.');
