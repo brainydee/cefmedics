@@ -29,11 +29,11 @@
 		<link rel="stylesheet" href="{{ asset('assets/vendor/simple-line-icons/css/simple-line-icons.min.css') }}">
 
 		<!-- Owl Carousel CSS -->
-		<link rel="stylesheet" href="{{ app()->environment('production') ? asset('public/assets/vendor/owl.carousel/assets/owl.carousel.min.css') : asset('assets/vendor/owl.carousel/assets/owl.carousel.min.css') }}">
-		<link rel="stylesheet" href="{{ app()->environment('production') ? asset('public/assets/vendor/owl.carousel/assets/owl.theme.default.min.css') : asset('assets/vendor/owl.carousel/assets/owl.theme.default.min.css') }}">
+		<link rel="stylesheet" href="{{asset('assets/vendor/owl.carousel/assets/owl.carousel.min.css') }}">
+		<link rel="stylesheet" href="{{ asset('assets/vendor/owl.carousel/assets/owl.theme.default.min.css') }}">
 
 		<!-- Magnific Popup CSS -->
-		<link rel="stylesheet" href="{{ app()->environment('production') ? asset('public/assets/vendor/magnific-popup/magnific-popup.min.css') : asset('assets/vendor/magnific-popup/magnific-popup.min.css') }}">
+		<link rel="stylesheet" href="{{asset('assets/vendor/magnific-popup/magnific-popup.min.css') }}">
 
 		<!-- Theme CSS -->
 		<link rel="stylesheet" href="{{ asset('assets/css/theme.css') }}">
