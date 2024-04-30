@@ -102,7 +102,7 @@ class PaymentController extends Controller
                 ]);
 
                 $appointment = Appointment::find($appointment_id);
-                $appointment->active = 1;
+                $appointment->active = true;
                 $appointment->save();
                 $payment->save();
 

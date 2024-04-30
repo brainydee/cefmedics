@@ -25,7 +25,11 @@
                         <span class="icon icon-sm rounded-circle bg-warning-light"><i class="text-warning material-icons md-qr_code"></i></span>
                         <div class="text">
                             <h6 class="mb-1 card-title">Appointments</h6>
-                            <span>{{auth()->user()->appointments->count()}}</span>
+                            @if(auth()->user()->user_type == 'admin')
+                                <span>{{$total_appointments}}</span>
+                            @else
+                                <span>{{auth()->user()->appointments->where('active', true)->count()}}</span>
+                            @endif
                         </div>
                     </article>
                 </div>

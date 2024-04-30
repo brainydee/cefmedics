@@ -10,10 +10,12 @@ class Dashboardhome extends Component
 {
 
     public $test_results;
+    public $total_appointments;
     
     public function mount()
     {
         $this->test_results = auth()->user()->appointments->whereNotNull('file_path')->count();
+        $this->total_appointments = Appointment::count();
     }
 
     public function render()
