@@ -5,12 +5,12 @@
         <meta charset="utf-8" />
         <title>Cefmedics Dashboard</title>
         <meta http-equiv="x-ua-compatible" content="ie=edge" />
-        <meta name="description" content="" />
+        <meta name="description" content="Cefmedics" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta property="og:title" content="" />
-        <meta property="og:type" content="" />
-        <meta property="og:url" content="" />
-        <meta property="og:image" content="" />
+        <meta property="og:title" content="Cefmedics" />
+        <meta property="og:type" content="Cefmedics" />
+        <meta property="og:url" content="Cefmedics" />
+        <meta property="og:image" content="Cefmedics" />
         <!-- Favicon -->
         <link rel="shortcut icon" href="{{ asset('assets/img/favicon.ico') }}" type="image/x-icon" />
         <link rel="preconnect" href="https://fonts.googleapis.com">
