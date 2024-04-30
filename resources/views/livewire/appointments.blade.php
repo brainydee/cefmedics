@@ -35,7 +35,7 @@
                                     @if(auth()->user()->user_type == 'admin')
                                     <td>{{$appointment->user->firstname}}</td>
                                     <td>{{$appointment->user->lastname}}</td>
-                                    <td>{{$appointment->user->emaik}}</td>
+                                    <td>{{$appointment->user->email}}</td>
                                     @endif
                                     <td>{{ \Carbon\Carbon::parse($appointment->appointment_date)->format('d-m-Y') }}</td>
                                     <td>{{$appointment->appointment_time}}</td>
