@@ -13,6 +13,11 @@
                             <tr>
                                 <th class="align-middle" scope="col">S/N</th>
                                 <th class="align-middle" scope="col">Type</th>
+                                @if(auth()->user()->user_type == 'admin')
+                                <th class="align-middle" scope="col">First Name</th>
+                                <th class="align-middle" scope="col">Last Name</th>
+                                <th class="align-middle" scope="col">Email</th>
+                                @endif
                                 <th class="align-middle" scope="col">Date</th>
                                 <th class="align-middle" scope="col">Time</th>
                                 <th class="align-middle" scope="col">Action</th>
@@ -27,7 +32,12 @@
                                 <tr>
                                     <td>{{++$n}}</td>
                                     <td>{{$appointment->appointment_type}}</td>
-                                    <td>{{$appointment->appointment_date}}</td>
+                                    @if(auth()->user()->user_type == 'admin')
+                                    <td>{{$appointment->user->firstname}}</td>
+                                    <td>{{$appointment->user->lastname}}</td>
+                                    <td>{{$appointment->user->emaik}}</td>
+                                    @endif
+                                    <td>{{ \Carbon\Carbon::parse($appointment->appointment_date)->format('d-m-Y') }}</td>
                                     <td>{{$appointment->appointment_time}}</td>
                                     @if(auth()->user()->user_type == 'admin')
                                         @if(!is_null($appointment->file_path))
