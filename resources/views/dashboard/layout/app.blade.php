@@ -44,7 +44,7 @@
                     <li class="menu-item">
                         <a class="menu-link" href="{{route('appointment')}}">
                             <i class="icon material-icons md-comment"></i>
-                            <span class="text">Schedule an Appointment</span>
+                            <span class="text">Book an Appointment</span>
                         </a>
                     </li>
                 @if(auth()->user()->user_type == 'admin')
