@@ -60,7 +60,7 @@
                                         </td>
                                         @endif  
                                     @endif                       
-                                    @if($appointment->active == 1)
+                                    @if($appointment->active)
                                       <td><span class="badge bg-primary">successful</span</td>
                                     @else
                                       <td><span class="badge bg-danger">failed</span</td>

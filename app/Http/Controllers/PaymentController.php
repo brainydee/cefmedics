@@ -101,12 +101,14 @@ class PaymentController extends Controller
                     'appointment_id' => intval($appointment_id),
                 ]);
 
+                
                 $appointment = Appointment::find($appointment_id);
                 $appointment->active = true;
                 $appointment->save();
                 $payment->save();
-
+                
                 Mail::to(auth()->user()->email)->send(new AppointmentConfirmedMail(auth()->user()));
+
                 DB::commit();
                 toastr()
                 ->persistent()
