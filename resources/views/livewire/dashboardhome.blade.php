@@ -13,7 +13,8 @@
                             <span class="icon icon-sm rounded-circle bg-primary-light"><i class="text-primary material-icons md-monetization_on"></i></span>
                             <div class="text">
                                 <h6 class="mb-1 card-title">Earnings</h6>
-                                <span>&#8358; {{number_format($earnings->total_earnings, 2)}}</span>
+                                
+                                <span>&#8358; {{number_format(isset($earnings) ? $earnings->total_earnings : 0, 2)}}</span>
                             </div>
                         </article>
                     </div>
