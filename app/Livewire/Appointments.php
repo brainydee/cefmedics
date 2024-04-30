@@ -71,7 +71,7 @@ class Appointments extends Component
 
     public function render()
     {
-        $appointmentsQuery = auth()->user()->user_type == 'Admin' ? Appointment::query() : auth()->user()->appointments();
+        $appointmentsQuery = auth()->user()->user_type == 'admin' ? Appointment::query() : auth()->user()->appointments();
 
         $appointments = $appointmentsQuery->simplePaginate(10);
         return view('livewire.appointments', ['appointments' => $appointments])->layout('dashboard.layout.app');
