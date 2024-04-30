@@ -16,13 +16,13 @@
                                 <div class="col-md-6">
                                     <div class="mb-4">
                                         <label for="product_name" class="form-label">First Name</label>
-                                        <input type="text" value="{{auth()->user()->firstname}}" placeholder="Type here" class="form-control" id="product_name" />
+                                        <input type="text" value="{{auth()->user()->firstname}}" placeholder="Type here" class="form-control" id="product_name" disabled />
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="mb-4">
                                         <label for="product_name" class="form-label">Last Name</label>
-                                        <input type="text" value="{{auth()->user()->lastname}}" placeholder="Type here" class="form-control" id="product_name" />
+                                        <input type="text" value="{{auth()->user()->lastname}}" placeholder="Type here" class="form-control" id="product_name" disabled/>
                                     </div>
                                 </div>
                             </div>  
@@ -36,7 +36,7 @@
                                     <div class="mb-4">
                                         <label class="form-label">Date</label>
                                         <div class="row gx-2">
-                                            <input placeholder="" value="{{$appointment->appointment_date}}" type="text" class="form-control" disabled/>
+                                            <input placeholder="" value="{{ \Carbon\Carbon::parse($appointment->appointment_date)->format('d-m-Y') }}" type="text" class="form-control" disabled/>
                                         </div>
                                     </div>
                                 </div>
@@ -73,7 +73,11 @@
             </div>
             <div class="col-lg-6">
                 <div class="card" style="height: 100%;">
-                     <img src="{{asset('assets/img/pay.jpg')}}"/>
+                    @if (App::environment('production'))
+                        <img src="{{ asset('public/assets/img/pay.jpg') }}"/>
+                    @else
+                        <img src="{{ asset('assets/img/pay.jpg') }}"/>
+                    @endif
                 </div>
             </div>
         </div>

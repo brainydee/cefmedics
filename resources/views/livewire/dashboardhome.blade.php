@@ -13,7 +13,7 @@
                             <span class="icon icon-sm rounded-circle bg-primary-light"><i class="text-primary material-icons md-monetization_on"></i></span>
                             <div class="text">
                                 <h6 class="mb-1 card-title">Earnings</h6>
-                                <span>&#8358; 0</span>
+                                <span>&#8358; {{number_format($earnings->total_earnings, 2)}}</span>
                             </div>
                         </article>
                     </div>
@@ -30,6 +30,7 @@
                     </article>
                 </div>
             </div>
+            
         @if(auth()->user()->user_type != 'admin')
             <div class="col-lg-6">
                 <div class="card card-body mb-4">

@@ -19,8 +19,8 @@ class Appointmentpage extends Component
     public function rules()
     {
         return [
-            'firstname'         => ['required', 'min:5'],
-            'lastname'          => ['required', 'min:5'],
+            'firstname'         => ['required'],
+            'lastname'          => ['required'],
             'appointment_type'  => ['required'],
             'appointment_date'  => ['required'],
             'appointment_time'  => ['required', 'min:5'],
@@ -37,8 +37,8 @@ class Appointmentpage extends Component
 
     public function save()
     {
+        $validated = $this->validate();
         try {
-            $validated = $this->validate();
             $validated['user_id'] = auth()->user()->id;
             $date = Carbon::createFromFormat('Y-m-d', $this->appointment_date);
             
@@ -57,12 +57,11 @@ class Appointmentpage extends Component
                 ->addError("Sorry the appointment time {$time} selected is not currently available. Kindly select another appointment time. Thank you");
                 return redirect()->back();
             }
-
+            $validated['appointment_date'] = Carbon::parse($validated['appointment_date'])->format('d-m-Y');
             Appointment::create($validated);
             toastr()->addSuccess('Your appointment was succcessful kindly proceed to make payment.');
             return redirect()->route('pay');
-        } catch (\Throwable $th) {    
-            dd($th->getMessage());    
+        } catch (\Throwable $th) {     
             toastr()
             ->escapeHtml(false)
             ->addError('<strong>We’re sorry</strong>, but an error occurred.');

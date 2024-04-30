@@ -16,32 +16,45 @@
 		<!-- Mobile Metas -->
 		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
 		<!-- Vendor CSS -->
-		<link rel="stylesheet" href="{{asset('assets/vendor/bootstrap/css/bootstrap.min.css')}}">
-		<link rel="stylesheet" href="{{asset('assets/vendor/fontawesome-free/css/all.min.css')}}">
-		<link rel="stylesheet" href="{{asset('assets/vendor/animate/animate.compat.css')}}">
-		<link rel="stylesheet" href="{{asset('assets/vendor/simple-line-icons/css/simple-line-icons.min.css')}}">
-		<link rel="stylesheet" href="{{asset('assets/vendor/owl.carousel/assets/owl.carousel.min.css')}}">
-		<link rel="stylesheet" href="{{asset('assets/vendor/owl.carousel/assets/owl.theme.default.min.css')}}">
-		<link rel="stylesheet" href="{{asset('assets/vendor/magnific-popup/magnific-popup.min.css')}}">
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="{{ app()->environment('production') ? asset('public/assets/vendor/bootstrap/css/bootstrap.min.css') : asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}">
+
+		<!-- Font Awesome CSS -->
+		<link rel="stylesheet" href="{{ app()->environment('production') ? asset('public/assets/vendor/fontawesome-free/css/all.min.css') : asset('assets/vendor/fontawesome-free/css/all.min.css') }}">
+
+		<!-- Animate CSS -->
+		<link rel="stylesheet" href="{{ app()->environment('production') ? asset('public/assets/vendor/animate/animate.compat.css') : asset('assets/vendor/animate/animate.compat.css') }}">
+
+		<!-- Simple Line Icons CSS -->
+		<link rel="stylesheet" href="{{ app()->environment('production') ? asset('public/assets/vendor/simple-line-icons/css/simple-line-icons.min.css') : asset('assets/vendor/simple-line-icons/css/simple-line-icons.min.css') }}">
+
+		<!-- Owl Carousel CSS -->
+		<link rel="stylesheet" href="{{ app()->environment('production') ? asset('public/assets/vendor/owl.carousel/assets/owl.carousel.min.css') : asset('assets/vendor/owl.carousel/assets/owl.carousel.min.css') }}">
+		<link rel="stylesheet" href="{{ app()->environment('production') ? asset('public/assets/vendor/owl.carousel/assets/owl.theme.default.min.css') : asset('assets/vendor/owl.carousel/assets/owl.theme.default.min.css') }}">
+
+		<!-- Magnific Popup CSS -->
+		<link rel="stylesheet" href="{{ app()->environment('production') ? asset('public/assets/vendor/magnific-popup/magnific-popup.min.css') : asset('assets/vendor/magnific-popup/magnific-popup.min.css') }}">
 
 		<!-- Theme CSS -->
-		<link rel="stylesheet" href="{{asset('assets/css/theme.css')}}">
-		<link rel="stylesheet" href="{{asset('assets/css/theme-elements.css')}}">
-		<link rel="stylesheet" href="{{asset('assets/css/theme-blog.css')}}">
-		<link rel="stylesheet" href="{{asset('assets/css/theme-shop.css')}}">
+		<link rel="stylesheet" href="{{ app()->environment('production') ? asset('public/assets/css/theme.css') : asset('assets/css/theme.css') }}">
+		<link rel="stylesheet" href="{{ app()->environment('production') ? asset('public/assets/css/theme-elements.css') : asset('assets/css/theme-elements.css') }}">
+		<link rel="stylesheet" href="{{ app()->environment('production') ? asset('public/assets/css/theme-blog.css') : asset('assets/css/theme-blog.css') }}">
+		<link rel="stylesheet" href="{{ app()->environment('production') ? asset('public/assets/css/theme-shop.css') : asset('assets/css/theme-shop.css') }}">
+
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 		<!-- Demo CSS -->
-		<link rel="stylesheet" href="{{asset('assets/css/demos/demo-medical.css')}}">
+		<link rel="stylesheet" href="{{ app()->environment('production') ? asset('public/assets/css/demos/demo-medical.css') : asset('assets/css/demos/demo-medical.css') }}">
 
 		<!-- Skin CSS -->
-		<link id="skinCSS" rel="stylesheet" href="{{asset('assets/css/skins/skin-medical.css')}}">
+		<link id="skinCSS" rel="stylesheet" href="{{ app()->environment('production') ? asset('public/assets/css/skins/skin-medical.css') : asset('assets/css/skins/skin-medical.css') }}">
 
 		<!-- Theme Custom CSS -->
-		<link rel="stylesheet" href="{{asset('assets/css/custom.css')}}">
-		<link rel="stylesheet" href="{{asset('assets/css/extra.css')}}">
+		<link rel="stylesheet" href="{{ app()->environment('production') ? asset('public/assets/css/custom.css') : asset('assets/css/custom.css') }}">
+		<link rel="stylesheet" href="{{ app()->environment('production') ? asset('public/assets/css/extra.css') : asset('assets/css/extra.css') }}">
+
 		<style>
 			body{
 				font-family: "Poppins", sans-serif !important;
@@ -123,11 +136,11 @@
 															<li><a class="dropdown-item" href="{{route('psycooncology')}}">Psycho-Oncology</a></li>
 														</ul>
 													</li>
-													<li class="dropdown-full-color dropdown-secondary">
+													<!-- <li class="dropdown-full-color dropdown-secondary">
 														<a class="nav-link" href="demo-medical-contact.html">
 															Contact
 														</a>
-													</li>
+													</li> -->
 												@guest
 													<li class="">
                                                         <a href="{{route('login')}}" class="btn btn-secondary text-white btn-rounded btn-with-arrow-solid mb-2" href="{{route('login')}}">Log In<span><i class="fas fa-sign-in"></i></span></a>
@@ -233,22 +246,22 @@
 		</div>
 
 		<!-- Vendor -->
-		<script src="{{asset('assets/vendor/plugins/js/plugins.min.js')}}"></script>
+		<script src="{{ app()->environment('production') ? asset('public/assets/vendor/plugins/js/plugins.min.js') : asset('assets/vendor/plugins/js/plugins.min.js') }}"></script>
 
 		<!-- Theme Base, Components and Settings -->
-		<script src="{{asset('assets/js/theme.js')}}"></script>
+		<script src="{{ app()->environment('production') ? asset('public/assets/js/theme.js') : asset('assets/js/theme.js') }}"></script>
 
 		<!-- Current Page Vendor and Views -->
-		<script src="{{asset('assets/js/views/view.contact.js')}}"></script>
+		<script src="{{ app()->environment('production') ? asset('public/assets/js/views/view.contact.js') : asset('assets/js/views/view.contact.js') }}"></script>
 
 		<!-- Demo -->
-		<script src="{{asset('assets/js/demos/demo-medical.js')}}"></script>
+		<script src="{{ app()->environment('production') ? asset('public/assets/js/demos/demo-medical.js') : asset('assets/js/demos/demo-medical.js') }}"></script>
 
 		<!-- Theme Custom -->
-		<script src="{{asset('assets/js/custom.js')}}"></script>
+		<script src="{{ app()->environment('production') ? asset('public/assets/js/custom.js') : asset('assets/js/custom.js') }}"></script>
 
 		<!-- Theme Initialization Files -->
-		<script src="{{asset('assets/js/theme.init.js')}}"></script>
+		<script src="{{ app()->environment('production') ? asset('public/assets/js/theme.init.js') : asset('assets/js/theme.init.js') }}"></script>
 		<script>
 				document.addEventListener('DOMContentLoaded', function() {
 				const dateInput = document.getElementById('saturdayDate');
