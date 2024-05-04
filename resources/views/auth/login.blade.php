@@ -10,7 +10,7 @@
                     </div>
                     <div class="col-md-12 align-self-center order-1">
                         <ul class="breadcrumb d-block text-center">
-                            <li><a href="#">Home</a></li>
+                            <li><a href="{{route('home')}}">Home</a></li>
                             <li class="active">Pages</li>
                         </ul>
                     </div>

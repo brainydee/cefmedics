@@ -75,7 +75,6 @@ class Appointmentpage extends Component
             toastr()->addSuccess('Your appointment was succcessful kindly proceed to make payment.');
             return redirect()->route('pay');
         } catch (\Throwable $th) {  
-            dd($th->getMessage());
             DB::rollBack();   
             toastr()
             ->escapeHtml(false)
