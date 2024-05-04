@@ -6,9 +6,12 @@ use App\Models\Appointment;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 use Livewire\Component;
+use Livewire\WithFileUploads;
 
 class Appointmentpage extends Component
 {
+    use WithFileUploads;
+
     public $firstname;
     public $lastname;
     public $appointment_type;
@@ -16,6 +19,7 @@ class Appointmentpage extends Component
     public $appointment_time;
     public $address;
     public $reason;
+    public $file;
 
     public function rules()
     {
@@ -26,7 +30,8 @@ class Appointmentpage extends Component
             'appointment_date'  => ['required'],
             'appointment_time'  => ['required', 'min:5'],
             'address'           => ['required'],
-            'reason'            => ['required']
+            'reason'            => ['required'],
+            'file'              => ['nullable', 'file', 'max:2048'], 
         ];
     }
 
@@ -41,9 +46,12 @@ class Appointmentpage extends Component
         $validated = $this->validate();
         try {
 
+            $path = $this->file->store('files');
+
             DB::beginTransaction();
 
             $validated['user_id'] = auth()->user()->id;
+            $validated['file_path'] = $path;
             $date = Carbon::createFromFormat('Y-m-d', $this->appointment_date);
             
             if (!$date->isSaturday()) {
@@ -67,6 +75,7 @@ class Appointmentpage extends Component
             toastr()->addSuccess('Your appointment was succcessful kindly proceed to make payment.');
             return redirect()->route('pay');
         } catch (\Throwable $th) {  
+            dd($th->getMessage());
             DB::rollBack();   
             toastr()
             ->escapeHtml(false)
