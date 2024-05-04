@@ -10,7 +10,7 @@ class Appointment extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['user_id', 'firstname', 'lastname', 'appointment_type', 'appointment_date', 'appointment_time', 'address', 'reason', 'active'];
+    protected $fillable = ['user_id', 'firstname', 'lastname', 'appointment_type', 'appointment_date', 'appointment_time', 'address', 'reason', 'active', 'file_path'];
 
     protected $casts = [
         'active' => 'boolean'
