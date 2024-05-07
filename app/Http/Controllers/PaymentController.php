@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Mail\AppointmentConfirmedMail;
+use App\Mail\NewAppointment;
 use App\Models\Appointment;
 use App\Models\Payment;
 use Paystack;
@@ -108,6 +109,7 @@ class PaymentController extends Controller
                 $payment->save();
                 
                 Mail::to(auth()->user()->email)->send(new AppointmentConfirmedMail(auth()->user()));
+                Mail::to('info@cefmedics.com')->send(new NewAppointment(auth()->user()));
 
                 DB::commit();
                 toastr()

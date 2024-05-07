@@ -45,8 +45,11 @@ class Appointmentpage extends Component
     {
         $validated = $this->validate();
         try {
-
-            $path = $this->file->store('files');
+            $path = null;
+            if($this->file){
+                $path = $this->file->store('files');
+            }
+           
 
             DB::beginTransaction();
 
@@ -69,7 +72,7 @@ class Appointmentpage extends Component
                 ->addError("Sorry the appointment time {$time} selected is not currently available. Kindly select another appointment time. Thank you");
                 return redirect()->back();
             }
-            $validated['appointment_date'] = Carbon::parse($validated['appointment_date'])->format('d-m-Y');
+         
             Appointment::create($validated);
             DB::commit();
             toastr()->addSuccess('Your appointment was succcessful kindly proceed to make payment.');
