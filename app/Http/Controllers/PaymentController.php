@@ -113,11 +113,16 @@ class PaymentController extends Controller
                 if($appointment->active){
                     Mail::to(auth()->user()->email)->send(new AppointmentConfirmedMail(auth()->user()));
                     Mail::to('info@cefmedics.com')->send(new NewAppointment(auth()->user(), $appointment));
+
+                    toastr()
+                    ->persistent()
+                    ->closeButton()
+                    ->addSuccess('Your appointment has been approved successfully.');
+                }else{
+                    toastr()
+                    ->progressBar(false)
+                    ->addError('Oops Appointment was not apporved');
                 }
-                toastr()
-                ->persistent()
-                ->closeButton()
-                ->addSuccess('Your appointment has been approved successfully.');
 
                 return redirect(route('userdashboard'));
             }
