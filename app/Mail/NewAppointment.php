@@ -2,6 +2,7 @@
 
 namespace App\Mail;
 
+use App\Models\Appointment;
 use App\Models\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -15,12 +16,14 @@ class NewAppointment extends Mailable
     use Queueable, SerializesModels;
 
     public $user;
+    public $appointment;
     /**
      * Create a new message instance.
      */
-    public function __construct(User $user)
+    public function __construct(User $user, Appointment $appointment)
     {
         $this->user = $user;
+        $this->appointment = $appointment;
     }
 
     /**

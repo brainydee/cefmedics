@@ -354,7 +354,7 @@
                                                 @endif
                                             </h2>
                                             <p>
-                                             A New appointment has just been booked and payment made successfully by {{ $user->firstname. ' '.$user->lastname }}
+                                             A New {{ $appointment->appointment_type }} appointment has just been booked for {{ $appointment->appointment_time }}, {{ $appointment->appointment_date }} and payment made successfully by {{ $user->firstname. ' '.$user->lastname }}
                                             <br>
                                             <br>
                                             </p>

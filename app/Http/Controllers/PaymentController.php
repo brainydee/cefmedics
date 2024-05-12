@@ -109,7 +109,7 @@ class PaymentController extends Controller
                 $payment->save();
                 
                 Mail::to(auth()->user()->email)->send(new AppointmentConfirmedMail(auth()->user()));
-                Mail::to('info@cefmedics.com')->send(new NewAppointment(auth()->user()));
+                Mail::to('info@cefmedics.com')->send(new NewAppointment(auth()->user(), $appointment));
 
                 DB::commit();
                 toastr()
