@@ -1,6 +1,6 @@
-
 <!doctype html>
 <html>
+
 <head>
     <meta name="viewport" content="width=device-width" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -15,7 +15,8 @@
             -ms-interpolation-mode: bicubic;
             max-width: 100%;
         }
-        .im{
+
+        .im {
             color: #222;
         }
 
@@ -202,7 +203,8 @@
             width: 25%;
             margin-bottom: 20px;
         }
-        .mem-dt img#qrcode_img{
+
+        .mem-dt img#qrcode_img {
             width: 40%;
         }
 
@@ -231,28 +233,35 @@
                 font-size: 28px !important;
                 margin-bottom: 10px !important;
             }
+
             table[class=body] .wrapper,
             table[class=body] .article {
                 padding: 10px !important;
             }
+
             table[class=body] .content {
                 padding: 0 !important;
             }
+
             table[class=body] .container {
                 padding: 0 !important;
                 width: 100% !important;
             }
+
             table[class=body] .main {
                 border-left-width: 0 !important;
                 border-radius: 0 !important;
                 border-right-width: 0 !important;
             }
+
             table[class=body] .btn table {
                 width: 100% !important;
             }
+
             table[class=body] .btn a {
                 width: 100% !important;
             }
+
             table[class=body] .img-responsive {
                 height: auto !important;
                 max-width: 100% !important;
@@ -268,6 +277,7 @@
             .ExternalClass {
                 width: 100%;
             }
+
             .ExternalClass,
             .ExternalClass p,
             .ExternalClass span,
@@ -276,6 +286,7 @@
             .ExternalClass div {
                 line-height: 100%;
             }
+
             .apple-link a {
                 color: inherit !important;
                 font-family: inherit !important;
@@ -284,9 +295,11 @@
                 line-height: inherit !important;
                 text-decoration: none !important;
             }
+
             .btn-primary table td:hover {
                 background-color: #34495e !important;
             }
+
             .btn-primary a:hover {
                 background-color: #34495e !important;
                 border-color: #34495e !important;
@@ -324,80 +337,78 @@
 </head>
 
 <body class="">
-<table border="0" cellpadding="0" cellspacing="0" class="body">
-    <tr>
-        <td>&nbsp;</td>
-        <td class="container">
-            <div class="content">
+    <table border="0" cellpadding="0" cellspacing="0" class="body">
+        <tr>
+            <td>&nbsp;</td>
+            <td class="container">
+                <div class="content">
 
-                <!-- START CENTERED WHITE CONTAINER -->
-                <table class="main">
+                    <!-- START CENTERED WHITE CONTAINER -->
+                    <table class="main">
 
-                    <!-- START MAIN CONTENT AREA -->
+                        <!-- START MAIN CONTENT AREA -->
 
-                    <div class="logo">
-                        <div class="overlay">
-                            <img src="{{ asset('image/logo/logo.png') }}" alt="">
+                        <div class="logo">
+                            <div class="overlay">
+                                <img src="{{ asset('image/logo/logo.png') }}" alt="">
+                            </div>
                         </div>
-                    </div>
-                    <tr>
-                        <td class="wrapper">
-                            <table border="0" cellpadding="0" cellspacing="0">
-                                <tr>
-                                    <td>
-                                        <div class="mem-dt" style="text-align: left; padding-bottom: 20px;">
-                                            <h2 class="wel-hd" style="text-align: left">
-                                                @if (! empty($greeting))
+                        <tr>
+                            <td class="wrapper">
+                                <table border="0" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                        <td>
+                                            <div class="mem-dt" style="text-align: left; padding-bottom: 20px;">
+                                                <h2 class="wel-hd" style="text-align: left">
+                                                    @if (! empty($greeting))
                                                     {{ $greeting }}
-                                                @else
+                                                    @else
                                                     @lang("Hello {$user->firstname}, ")
-                                                @endif
-                                            </h2>
-                                            <p>
-                                            Your appointment has been scheduled successfully. Here is the link to access your scheduled appointment.
-                                            <br>
-                                            <br>
-                                            </p>
+                                                    @endif
+                                                </h2>
+                                                <p>
+                                                    Your appointment has been scheduled for {{ $appointment->appointment_time }}, {{ $appointment->appointment_date }} successfully. Here is the zoom link to access your scheduled appointment. <a href="https://us06web.zoom.us/j/5109497013?pwd=ZCtHM0JQa1VLM1RhSDhwR1R3VXloQT09">Zoom Meeting Link</a>
+                                                    <br>
+                                                </p>
 
-                                            <br>
+                                                <br>
 
-                                            <br>
-                                            {{-- Salutation --}}
-                                            @if (! empty($salutation))
+                                                <br>
+                                                {{-- Salutation --}}
+                                                @if (! empty($salutation))
                                                 {{ $salutation }}
-                                            @else
+                                                @else
                                                 <p>
                                                     @lang('Best Regards'),<br>
                                                     {{ config('app.name') }}
                                                 </p>
-                                            @endif
+                                                @endif
 
-                                        </div>
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
 
-                    <!-- END MAIN CONTENT AREA -->
-                </table>
-                <table class="inner-body" align="center" width="570" cellpadding="0" cellspacing="0" role="presentation">
-                    <!-- Body content -->
-                    <tr>
-                        <td class="content-cell">
+                        <!-- END MAIN CONTENT AREA -->
+                    </table>
+                    <table class="inner-body" align="center" width="570" cellpadding="0" cellspacing="0" role="presentation">
+                        <!-- Body content -->
+                        <tr>
+                            <td class="content-cell">
 
-                        </td>
-                    </tr>
-                </table>
+                            </td>
+                        </tr>
+                    </table>
 
 
-                <!-- END CENTERED WHITE CONTAINER -->
-            </div>
-        </td>
-        <td>&nbsp;</td>
-    </tr>
-</table>
+                    <!-- END CENTERED WHITE CONTAINER -->
+                </div>
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+    </table>
 </body>
 
 </html>
-

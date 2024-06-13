@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Mail\AppointmentConfirmedMail;
 use App\Mail\NewAppointment;
 use App\Models\Appointment;
@@ -24,7 +25,7 @@ class PaymentController extends Controller
             $message              = $paymentDetails['message'] ?? null;
             $paymentdata_id       = $paymentDetails['data']['id'];
             $domain               = $paymentDetails['data']['domain'];
-            $status               = $paymentDetails['data']['status'];   
+            $status               = $paymentDetails['data']['status'];
             $reference            = $paymentDetails['data']['reference'];
             $paid_at              = $paymentDetails['data']['paid_at'];
             $channel              = $paymentDetails['data']['channel'];
@@ -57,8 +58,8 @@ class PaymentController extends Controller
             $phone              =  $paymentDetails['data']['customer']['phone'];
             $transaction_date   =  $paymentDetails['data']['transaction_date'];
 
-           
-            
+
+
             if ($paymentstatus == true && $amount == 5000000) {
 
                 $payment = new Payment([
@@ -73,7 +74,7 @@ class PaymentController extends Controller
                     'channel' => $channel,
                     'currency' => $currency,
                     'receipt_number' => $receipt_number,
-                    'amount' => $amount/100,
+                    'amount' => $amount / 100,
                     'gateway_response' => $gateway_response,
                     'ip_address' => $ip_address,
                     'fees' => $fees,
@@ -102,38 +103,36 @@ class PaymentController extends Controller
                     'appointment_id' => intval($appointment_id),
                 ]);
 
-                
+
                 $appointment = Appointment::find($appointment_id);
                 $appointment->active = true;
                 $appointment->save();
                 $payment->save();
-                
+
                 DB::commit();
 
-                if($appointment->active){
-                    Mail::to(auth()->user()->email)->send(new AppointmentConfirmedMail(auth()->user()));
+                if ($appointment->active) {
+                    Mail::to(auth()->user()->email)->send(new AppointmentConfirmedMail(auth()->user(), $appointment));
                     Mail::to('info@cefmedics.com')->send(new NewAppointment(auth()->user(), $appointment));
 
                     toastr()
-                    ->persistent()
-                    ->closeButton()
-                    ->addSuccess('Your appointment has been approved successfully.');
-                }else{
+                        ->persistent()
+                        ->closeButton()
+                        ->addSuccess('Your appointment has been approved successfully.');
+                } else {
                     toastr()
-                    ->progressBar(false)
-                    ->addError('Oops Appointment was not apporved');
+                        ->progressBar(false)
+                        ->addError('Oops Appointment was not apporved');
                 }
 
                 return redirect(route('userdashboard'));
             }
-         
         } catch (\Throwable $th) {
             DB::rollBack();
             toastr()
-            ->progressBar(false)
-            ->addError('Something went wrong please try again later.');
+                ->progressBar(false)
+                ->addError('Something went wrong please try again later.');
             return redirect()->back();
         }
-     
     }
-}   
+}
