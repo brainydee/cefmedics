@@ -7,10 +7,11 @@ use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 use Livewire\Component;
 use Livewire\WithFileUploads;
+use App\Traits\AppointmentTrait;
 
 class Appointmentpage extends Component
 {
-    use WithFileUploads;
+    use WithFileUploads, AppointmentTrait;
 
     public $firstname;
     public $lastname;
@@ -20,6 +21,9 @@ class Appointmentpage extends Component
     public $address;
     public $reason;
     public $file;
+    public $selected_day;
+    public $available_time = [];
+    private $available_days =  ['Friday', 'Saturday', 'Sunday'];
 
     public function rules()
     {
@@ -28,13 +32,22 @@ class Appointmentpage extends Component
             'lastname'          => ['required'],
             'appointment_type'  => ['required'],
             'appointment_date'  => ['required'],
-            'appointment_time'  => ['required', 'min:5'],
+            'appointment_time'  => ['nullable'],
             'address'           => ['required'],
             'reason'            => ['required'],
             'file'              => ['nullable', 'file', 'max:2048'], 
         ];
     }
 
+
+    public function updated($value){
+        if($value == 'appointment_date'){
+            $this->available_time = $this->fetchAvailableDaysAndTime($this->appointment_date);
+            $this->selected_day = $this->getSelectedDay($this->appointment_date);
+        }
+    }
+    
+    
     public function mount()
     {
         $this->firstname = auth()->user()->firstname;
@@ -56,20 +69,27 @@ class Appointmentpage extends Component
             $validated['user_id'] = auth()->user()->id;
             $validated['file_path'] = $path;
             $date = Carbon::createFromFormat('Y-m-d', $this->appointment_date);
-            
-            if (!$date->isSaturday()) {
+            $time = $validated['appointment_time'];
+
+            $available_day = in_array($this->selected_day, $this->available_days);
+
+            //check if day selected is valid
+
+            if(!$available_day){
                 toastr()
                 ->progressBar(false)
-                ->addError('Appointments can only be made on Saturdays. Kindly select a Saturday on the appointment date field. Thank you');
+                ->addError("Appointments cannot be booked on {$this->selected_day} kindly check the available days and select an appointment time . Thank you");
                 return redirect()->back();
             }
-            $time = $validated['appointment_time'];
-            $available = $this->checkAvailability($time, $validated['appointment_date']);
 
-            if(!$available){
+            //check if day and time is available and not booked::
+
+            $time_date_available = $this->checkAvailability($time, $validated['appointment_date']);
+
+            if(!$time_date_available){
                 toastr()
                 ->progressBar(false)
-                ->addError("Sorry the appointment time {$time} selected is not currently available. Kindly select another appointment time. Thank you");
+                ->addError("Sorry the appointment time {$time} selected is not currently available. Kindly select another appointment time or check other available days. Thank you");
                 return redirect()->back();
             }
          
@@ -90,8 +110,7 @@ class Appointmentpage extends Component
     public function checkAvailability($time, $date)
     {
         //check if date and time has been booked already::
-
-        $appointment = Appointment::where('appointment_time', $time)->where('appointment_date', $date)->where('active', '1')->first();
+        $appointment = Appointment::where('appointment_time', $time)->where('appointment_date', $date)->where('active', true)->first();
 
         if($appointment){
              return false;
@@ -102,7 +121,6 @@ class Appointmentpage extends Component
 
     public function render()
     {
-        $time_available = ['2:00pm to 3:30pm', '3:30pm  to 5:00pm'];
-        return view('livewire.appointmentpage', ['time_available' => $time_available])->layout('layouts.real');
+        return view('livewire.appointmentpage')->layout('layouts.real');
     }
 }

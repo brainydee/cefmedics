@@ -2,46 +2,33 @@
 
 namespace App\Traits;
 use Carbon\Carbon;
-use App\Models\Appointment;
-use App\Models\Setting;
-use Carbon\Carbon;
+use App\Models\AppointmentSetting;
 
-class AppointmentTrait
+
+trait AppointmentTrait
 {
-
-    private $appointment_count;
-    private $hours_limit;
-    private $appointment_limit;
-
+    protected function fetchAvailableDaysAndTime($date)
+    {
+        $carbonDate = Carbon::parse($date);
+        $day = $carbonDate->format('l');
+        $data = AppointmentSetting::select(['start_time', 'end_time', 'day_of_week'])->where('day_of_week', $day)->get();
+        if(count($data) === 0){
+            return null;
+        }
+        return $data;
+    }
    
-    public function getAvailabilityHours()
+
+    protected function getSelectedDay($date)
     {
-        $this->hours_limit = Setting::first()->hours_limit;
+        $carbonDate = Carbon::parse($date);
+        $day = $carbonDate->format('l');
+        return $day;
     }
 
-    public function getAppointmentCount()
+
+    protected function getAvailableDays()
     {
-        $this->appointment_count = Appointment::count();
-        $this->appointment_limit = Setting::first()->appointment_limit;
-
-    }
-
-    
-    public function getAppintmentTime()
-    {
-        $this->getAppointmentCount();
-        $this->getAvailabilityHours();
-
-        //Calculate the time:::
-
-        $hours_limit = $this->hours_limit;
-       
-
-    }
-
-    public function getAppintmentDate()
-    {
-        $nextSaturday = Carbon::now()->next(Carbon::SATURDAY);
-        return $nextSaturday->toDateString();
+        return ['Friday', 'Saturday', 'Sunday'];
     }
 }

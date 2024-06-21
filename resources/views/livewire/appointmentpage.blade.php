@@ -59,17 +59,21 @@
                         <div class="row">
                             <div class="form-group col-lg-6">
                                 <label class="form-label mb-1 text-2">Appointment Date</label>
-                                <input type="date"   wire:model.blur="appointment_date" data-msg-required="Please select a Saturday." class="form-control text-3 h-auto py-2">
+                                <input type="date"   wire:model.live ="appointment_date" data-msg-required="Please select a Saturday." class="form-control text-3 h-auto py-2">
                                 @error('appointment_date') <span class="error text-danger">{{ $message }}</span> @enderror
                             </div>
                             <div class="form-group col-lg-6">
                             <label class="form-label mb-1 text-2">Appointment Time</label>
-                            <select wire:model="appointment_time" class="form-control text-3 h-auto py-2" required>
+                            @if(isset($available_time))
+                            <select wire:model="appointment_time" class="form-control text-3 h-auto py-2">
                                 <option value=""> - SELECT TIME -</option>
-                                @foreach ($time_available as $time)
-                                    <option value = "{{ $time }}">{{$time}}</option>
+                                @foreach ($available_time as $date)
+                                    <option value = "{{$date->start_time.' to '.$date->end_time}}">{{$date->start_time.' to '.$date->end_time}}</option>
                                 @endforeach
                             </select>
+                            @else
+                            <input type="text" class="form-control text-3 h-auto py-2" value="No appointment time Available !"  disabled/>
+                            @endif
                             @error('appointment_time') <span class="error text-danger">{{ $message }}</span> @enderror
                         </div>
                         </div> 

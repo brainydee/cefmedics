@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('appointment_time');
             $table->boolean('active')->default(false);
             $table->boolean('is_paid')->default(false);
+            $table->boolean('is_completed')->default(false);
             $table->timestamps();
         });
     }

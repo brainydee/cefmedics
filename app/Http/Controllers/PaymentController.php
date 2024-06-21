@@ -106,6 +106,7 @@ class PaymentController extends Controller
 
                 $appointment = Appointment::find($appointment_id);
                 $appointment->active = true;
+                $appointment->status = 'ongoing';
                 $appointment->save();
                 $payment->save();
 

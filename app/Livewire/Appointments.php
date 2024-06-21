@@ -43,6 +43,25 @@ class Appointments extends Component
          return redirect()->back();
     }
 
+
+    public function markComplete($id)
+    {
+        try {
+            $appointement = Appointment::find($id);
+            $appointement->status = 'completed';
+            $appointement->save();
+            toastr()
+            ->progressBar(false)
+            ->addSuccess('Appointment Completed Successfully');
+            $this->js("window.location.reload()");
+        } catch (\Throwable $th) {
+            toastr()
+            ->progressBar(false)
+            ->addError('Something went wrong please try again later.');
+            return redirect()->back();
+        }
+    }
+
     public function saveFile()
     {
         $this->validate();

@@ -40,15 +40,16 @@
                                     <td>{{ \Carbon\Carbon::parse($appointment->appointment_date)->format('d-m-Y') }}</td>
                                     <td>{{$appointment->appointment_time}}</td>
                                     @if(auth()->user()->user_type == 'admin')
-                                        @if(!is_null($appointment->file_path))
                                         <td>
-                                            <a href="Javascript:void(0)" type="button"  wire:click="downloadFile('{{ $appointment->file_path }}')"  class="btn btn-xs" style="background-color: blue;"><i class="fa fa-plus"></i>&nbsp;Download Test File</a>
+                                            @if(!is_null($appointment->file_path))
+                                                <a href="Javascript:void(0)" type="button"  wire:click="downloadFile('{{ $appointment->file_path }}')"  class="btn btn-xs" style="background-color: blue;"><i class="fa fa-plus"></i>&nbsp;Download Test File</a>
+                                            @else
+                                                <span class="badge bg-success">No file uploads</span>
+                                             @endif
+                                            @if($appointment->status !== 'completed')
+                                                <a href="Javascript:void(0)" type="button"  wire:click="markComplete({{$appointment->id}})"  class="btn btn-xs" style="background-color: blue;"><i class="fa fa-plus"></i>&nbsp;Complete</a>
+                                             @endif
                                         </td>
-                                        @else
-                                        <td>
-                                            <span class="badge bg-success">No Test uploaded yet</span>
-                                        </td>
-                                        @endif;
                                     @else
                                         @if(is_null($appointment->file_path))
                                         <td>
@@ -60,11 +61,8 @@
                                         </td>
                                         @endif  
                                     @endif                       
-                                    @if($appointment->active)
-                                      <td><span class="badge bg-primary">successful</span</td>
-                                    @else
-                                      <td><span class="badge bg-danger">failed</span</td>
-                                    @endif
+                                    <td><span class="badge bg-primary">{{$appointment->status}}</span</td>
+                                  
                                 </tr>
                             @endforeach
                         </tbody>

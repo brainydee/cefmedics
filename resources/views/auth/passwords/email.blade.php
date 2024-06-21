@@ -6,12 +6,12 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 align-self-center p-static order-2 text-center">
-                        <h1 class="font-weight-bold text-dark">Reset Password</h1>
+                        <h1 class="font-weight-bold text-dark">Forgot Password</h1>
                     </div>
                     <div class="col-md-12 align-self-center order-1">
                         <ul class="breadcrumb d-block text-center">
                             <li><a href="#">Home</a></li>
-                            <li class="active">Pages</li>
+                            <li class="active">Forgot Password</li>
                         </ul>
                     </div>
                 </div>
@@ -29,7 +29,7 @@
                                 <input type="email" value="" class="form-control form-control-lg text-4 form-control @error('email') is-invalid @enderror" name = "email" value = "{{ old('email') }}" required autocomplete="email" autofocus>
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                        <p class="text-danger">{{ $message }}</p>
                                     </span>
                                 @enderror
                             </div>
@@ -43,7 +43,7 @@
                     </form>
                 </div>
                 <div class="col-md-6 col-lg-5">
-                    <img src="{{asset('assets/img/reset-min.jpg')}}" class="img-responsive custom"/>
+                    <img src="{{asset('assets/img/forgot-password.jpg')}}" class="img-responsive custom"/>
                 </div>
               
             </div>
