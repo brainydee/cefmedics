@@ -18,13 +18,14 @@
             </div>
         </section>
         <div class="container py-4">
-
+           
             <div class="row justify-content-center">
                 <div class="col-md-6 col-lg-5 mb-5 mb-lg-0">
                     <form action="{{ route('password.email') }}" method="POST" class="needs-validation shadow-sm p-3 mt-5">
                     @csrf
                         <div class="row">
                             <div class="form-group col">
+                                 <x-auth-session-status class="mb-4" :status="session('status')" />
                                 <label class="form-label text-color-dark text-3">Email address <span class="text-color-danger ">*</span></label>
                                 <input type="email" value="" class="form-control form-control-lg text-4 form-control @error('email') is-invalid @enderror" name = "email" value = "{{ old('email') }}" required autocomplete="email" autofocus>
                                 @error('email')
