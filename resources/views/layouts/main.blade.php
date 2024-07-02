@@ -190,20 +190,29 @@
 							<br>
 							Ajao Estate,<br>
 							Isolo, Lagos<br>
-							Phone : +2348035858071
 						</p>
 					</div>
 					<div class="col-md-4 col-lg-3">
 						<h4 class="mb-4">Opening Hours</h4>
 
 						<div class="info custom-info">
+							<span>Friday</span>
+							<span>2:00pm to 8:00 pm</span>
+						</div>
+
+						<div class="info custom-info">
 							<span>Saturday</span>
-							<span>2:00pm to 5:00 pm</span>
+							<span>2:00pm to 8:00 pm</span>
+						</div>
+
+						<div class="info custom-info">
+							<span>Sunday</span>
+							<span>7:00pm to 10:00 pm</span>
 						</div>
 					</div>
 					<div class="col-md-4 col-lg-3">
 						<div class="contact-details">
-							<h4 class="mb-4">Mobile Number</h4>
+							<h4 class="mb-4">Contact Number</h4>
 							<a class="text-decoration-none" style="font-size: 13px;" href="tel:1234567890">
 								<strong class="font-weight-light" style="font-size: 14px;">+2348024331403</strong>
 							</a>
