@@ -18,7 +18,11 @@ use App\Http\Middleware\Authenticate;
 |
 */
 
-Route::get('/', [PagesController::class, 'index'])->name('home');
+Route::get('/home', [PagesController::class, 'index'])->name('home');
+
+Route::get('/', function () {
+    return redirect()->route('login');
+});
 
 
 Route::withoutMiddleware([Authenticate::class])->group(function () {

@@ -70,7 +70,7 @@
 				<div class="header-top header-top-default header-top-borders border-bottom-0">
 					<div class="container h-100">
 						<div class="header-row h-100">
-							<div class="header-column justify-content-end">
+							<!-- <div class="header-column justify-content-end">
 								<div class="header-row">
 									<nav class="header-nav-top">
 										<ul class="nav nav-pills">
@@ -83,7 +83,7 @@
 										</ul>
 									</nav>
 								</div>
-							</div>
+							</div> -->
 						</div>
 					</div>
 				</div>
@@ -93,11 +93,11 @@
 							<div class="header-row">
 								<div class="header-logo">
 									@if( env('APP_ENV') == 'local')
-									<a href="{{url('/')}}">
+									<a href="https://cefmedics.com">
 										<img alt="Cefmedics logo" width="143" height="40" src="{{asset('assets/img/logo-copy.png')}}">
 									</a>
 									@else
-									<a href="{{url('/')}}">
+									<a href="https://cefmedics.com">
 										<img alt="Cefmedics logo" width="143" height="40" src="{{asset('public/assets/img/logo-copy.png')}}">
 									</a>
 									@endif
@@ -110,17 +110,17 @@
 									<div class="header-nav-main header-nav-main-square header-nav-main-effect-1 header-nav-main-sub-effect-1">
 										<nav class="collapse">
 											<ul class="nav nav-pills" id="mainNav">
-												<li class="dropdown-full-color dropdown-secondary">
+												<!-- <li class="dropdown-full-color dropdown-secondary">
 													<a class="nav-link active" href="{{url('/')}}">
 														Home
 													</a>
-												</li>
-												<li class="dropdown-full-color dropdown-secondary">
+												</li> -->
+												<!-- <li class="dropdown-full-color dropdown-secondary">
 													<a class="nav-link" href="{{route('about')}}">
 														About Us
 													</a>
-												</li>
-												<li class="dropdown-full-color dropdown-secondary">
+												</li> -->
+												<!-- <li class="dropdown-full-color dropdown-secondary">
 													<a class="nav-link" href="{{route('appointment')}}">
 														Appointments
 													</a>
@@ -133,7 +133,7 @@
 														<li><a class="dropdown-item" href="{{route('oncology')}}">Oncology</a></li>
 														<li><a class="dropdown-item" href="{{route('psycooncology')}}">Psycho-Oncology</a></li>
 													</ul>
-												</li>
+												</li> -->
 												<!-- <li class="dropdown-full-color dropdown-secondary">
 														<a class="nav-link" href="demo-medical-contact.html">
 															Contact
